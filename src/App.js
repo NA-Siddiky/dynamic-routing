@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import {
   BrowserRouter as Router, Switch, Route
 } from "react-router-dom";
+import Friend from "./components/Friend/Friend";
 import Friends from "./components/Friends/Friends";
 import Header from "./components/Header/Header";
 
@@ -20,6 +21,9 @@ function App() {
           </Route>
           <Route path="/friends">
             <Friends></Friends>
+          </Route>
+          <Route path="/friend/:id">
+            <Friend></Friend>
           </Route>
         </Switch>
       </Router>

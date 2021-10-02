@@ -1,11 +1,17 @@
 import React from 'react';
 import Friend from '../Friend/Friend';
 import useLoad from '../Hooks/useLoad';
+import { useHistory } from "react-router-dom";
 
 const Friends = () => {
 
+    let history = useHistory();
+
+    function handleClick(id) {
+        history.push(`/friend/${id}`);
+    }
+
     const [users, setUsers] = useLoad();
-    console.log(users);
 
     const gridStyle = {
         display: 'grid',
@@ -23,6 +29,7 @@ const Friends = () => {
                         <div key={friend.id} style={{ border: '2px solid green', borderRadius: '10px' }}>
                             <h1>{friend.name}</h1>
                             <p>{friend.email}</p>
+                            <button onClick={() => handleClick(friend.id)}>Detail</button>
                         </div>
                     ))
                 }
