@@ -6,6 +6,13 @@ import useSingleLoad from '../Hooks/useSingleLoad';
 const Friend = () => {
 
     const { id } = useParams();
+
+    // .....logic.....//
+
+    // const id = (window.location.href).split("/")
+    // const newId = id[id.length - 1]
+    // const [user, setUser] = useSingleLoad(newId);
+
     const [user, setUser] = useSingleLoad(id);
 
     console.log(user);
