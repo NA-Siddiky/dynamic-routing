@@ -29,7 +29,10 @@ const Friends = () => {
                         <div key={friend.id} style={{ border: '2px solid green', borderRadius: '10px' }}>
                             <h1>{friend.name}</h1>
                             <p>{friend.email}</p>
-                            <button onClick={() => handleClick(friend.id)}>Detail</button>
+                            <div style={{ textAlign: 'center' }}>
+                                <button onClick={() => handleClick(friend.id)}>Detail</button>
+
+                            </div>
                         </div>
                     ))
                 }
